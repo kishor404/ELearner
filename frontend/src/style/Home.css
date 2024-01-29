@@ -117,3 +117,54 @@
     right: 20px;
 }
 
+@media only screen and (max-width: 500px) {
+    .Body{
+        flex-direction: column-reverse;
+        width:100%;
+        overflow: hidden;
+    }
+    *{
+      font-size: 10pt;
+    }
+    .RR img{
+        width:250px;
+    }
+    .landing{
+        height: 100vh;
+        justify-content: start;
+    }
+    .RR{
+        display: flex;
+        justify-content: center;
+    }
+    .LL{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Foot{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right:0;
+    }
+    .LL .Head{
+        width:90%;
+        text-align: center;
+    }
+    .LL .Para{
+        width:90%;
+        text-align: center;
+        line-height: 20px;
+    }
+    .lo{
+        width:50%;
+        
+    }
+    .ro{
+        width:20%;
+    }
+    
+  }

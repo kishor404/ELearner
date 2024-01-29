@@ -4,6 +4,8 @@ import "../style/Practice.css";
 import { Link } from 'react-router-dom';
 import { useGlobal } from '../components/GlobalContext';
 import information from "../infomation.json";
+import study from "../assets/study.jpg"
+
 
 function FormPractice(){
 
@@ -44,6 +46,7 @@ function FormPractice(){
     document.querySelector(".MoreWeb1").style="display:flex;";
     document.querySelector(".backer").style="display:flex;";
     document.querySelector(".bh").style="display:none;";
+    document.querySelector(".mixc").style="display:none;";
   }
 
   const Latest=FormData.slice(-3);
@@ -148,7 +151,16 @@ function FormPractice(){
         <div>
         <Link to={"/practice/"} className='backer'>{"X Close"}</Link>
         </div>
-      
+        <div className='mixc'>
+         <img src={study}></img>
+         <Link className='btx4' to={Latest[2].Link}>
+            {Latest[2].Title||"Loading..."}
+         </Link>
+         <Link className='btx5' to={Latest[2].Link}>
+            {Latest[1].Title||"Loading..."}
+         </Link>
+         <button className='btx6' onClick={opnMore}>More</button>
+      </div>
     </>
   )
 }

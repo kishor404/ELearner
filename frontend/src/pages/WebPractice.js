@@ -6,6 +6,7 @@ import { useGlobal } from '../components/GlobalContext';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import information from "../infomation.json";
+import study from "../assets/study.jpg"
 
 
 function WebPractice() {
@@ -87,6 +88,7 @@ function WebPractice() {
     document.querySelector(".MoreWeb2").style="display:flex;";
     document.querySelector(".backer").style="display:flex;";
     document.querySelector(".bn").style="display:none;";
+    document.querySelector(".mixc").style="display:none;";
   }
 
   const LatestData=WebData.slice(-3);
@@ -98,11 +100,13 @@ function WebPractice() {
     if(rept(x)){
       ReactDOM.render(<PracticeModule TId={WebData.indexOf(x)} logInfo={logInfo} className='TTT'/>, container);
       document.querySelector(".bn").style="display:none;";
+      document.querySelector(".mixc").style="display:none;";
       document.querySelector(".MoreWeb2").style="display:none;";
       document.querySelector(".testMod").style="display:flex;";
     }
     else{
       document.querySelector(".bn").style="display:none;";
+      document.querySelector(".mixc").style="display:none;";
       document.querySelector(".MoreWeb2").style="display:none;";
       document.querySelector(".no").style="display:flex;";
     }
@@ -237,6 +241,17 @@ function WebPractice() {
         <div>
           <Link to={"/practice/"} className='backer'>{"X Close"}</Link>
         </div>
+
+        <div className='mixc'>
+         <img src={study}></img>
+         <button className='btx4' onClick={()=>chgTest(LatestData[2])}>
+            {LatestData[2].Title||"Loading..."}
+         </button>
+         <button className='btx5' onClick={()=>chgTest(LatestData[1])}>
+            {LatestData[1].Title||"Loading..."}
+         </button>
+         <button className='btx6' onClick={opnMore}>More</button>
+      </div>
         
     </>
   )

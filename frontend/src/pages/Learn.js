@@ -58,7 +58,7 @@ function Video() {
   return (
     <>
 
-      <div className='landing'>
+      <div className='landing uiuio'>
         <div className='Header'>
           <div className='ro'>
             <p>{information.ProjectName}</p>

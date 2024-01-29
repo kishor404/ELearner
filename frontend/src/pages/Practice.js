@@ -4,6 +4,7 @@ import Card2 from "../assets/landscape-2.png";
 import { useGlobal } from '../components/GlobalContext';
 import "../style/Practice.css";
 import { Link } from 'react-router-dom';
+import study from "../assets/study.jpg"
 
 
 
@@ -68,6 +69,15 @@ function Practice() {
             
          </div>
       </div>
+      </div>
+      <div className='mixc'>
+         <img src={study}></img>
+         <Link className='btx4' to={'/practice/webpractice'}>
+            Practice On Web Module
+         </Link>
+         <Link className='btx5' to={'/practice/formpractice'}>
+            Practice On Google Form
+         </Link>
       </div>
         
     </>

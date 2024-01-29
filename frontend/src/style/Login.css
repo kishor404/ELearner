@@ -308,5 +308,32 @@
     margin: 10px 0;
   }
   .Page{
-    background-color: white;
+    background-color:white;
   }
+
+
+/* - -- - - -- - - RESPONSIVE  - - - - --- - --- - */
+
+@media only screen and (max-width: 500px) {
+  .containerL{
+    height: 1500px;
+  }
+  *{
+    font-size: 10pt;
+  }
+  h1{
+    font-size: 15pt;
+  }
+  .containerL button{
+    font-size: 50%;
+    padding: 0px;
+    width:70%;
+    height:2%;
+  }
+  .containerL input{
+    font-size: 70%;
+  }
+  .dropdep{
+    font-size: 70%;
+  }
+}

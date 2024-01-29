@@ -30,6 +30,7 @@ function Info(){
                 <p>Backend : {information.Backend}</p>
                 <p>Frontend : {information.Frontend}</p>
                 <p>Database : {information.Database}</p>
+                <button className="glow-button">Download Apk</button>
             </div>
               <div className='RR'>
                 <img src={LandingImg} alt="Development"/>
