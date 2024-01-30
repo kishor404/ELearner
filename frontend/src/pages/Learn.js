@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { useGlobal } from '../components/GlobalContext';
 import information from "../infomation.json";
+import ReactLoading from "react-loading";
 
 function Video() {
 
@@ -19,8 +20,17 @@ function Video() {
 
   // API Fetch
 
-  let ReqData=[{"Title":"None","Link":"404"}];
+  let ReqData=[{"Title":"No Data","Link":"404"}];
   const [Learn, setLearn] = useState(ReqData);
+
+  useEffect(()=>{
+    if(Learn[0].Title=="No Data"){
+      document.querySelector(".loading").style="display:flex;";
+    }
+    if(Learn[0].Title!="No Data"){
+      document.querySelector(".loading").style="display:none;";
+    }
+  },[Learn])
 
   useEffect(() => {
     const apiUrl = URL+'/api/learn';
@@ -98,7 +108,11 @@ function Video() {
 
     </div>
     
-
+    <div className='loading'>
+         <ReactLoading type="bubbles" color="#0000FF"
+                height={100} width={100} />
+                <p>Loading Please Wait...</p>
+      </div>
 
   </>
   )

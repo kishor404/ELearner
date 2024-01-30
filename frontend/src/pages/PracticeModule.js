@@ -19,6 +19,15 @@ function PracticeModule({ TId, logInfo }) {
    const [WebData, setWebData] = useState(ReqData);
    const [QData, setQData] = useState(WebData[0]);
    const [questionIndex, setQuestionIndex] = useState(0);
+
+   useEffect(()=>{
+    if(WebData[0].Title=="No Data"){
+      document.querySelector(".loading").style="display:flex;";
+    }
+    if(WebData[0].Title!="No Data"){
+      document.querySelector(".loading").style="display:none;";
+    }
+  },[WebData])
  
    useEffect(() => {
      const apiUrl = URL+'/api/web';

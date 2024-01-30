@@ -335,6 +335,23 @@ body{
 .mixc{
   display: none;
 }
+.apk{
+  width:150px;
+}
+.loading{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+}
+
 
 @media only screen and (max-width: 500px){
   .containerTest{

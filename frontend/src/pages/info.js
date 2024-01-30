@@ -2,6 +2,7 @@ import "../style/Home.css";
 import { Link } from 'react-router-dom';
 import LandingImg from "../assets/dev.png";
 import information from "../infomation.json";
+import ELearner from "../assets/ELearner.apk";
 
 function Info(){
     return (
@@ -30,7 +31,7 @@ function Info(){
                 <p>Backend : {information.Backend}</p>
                 <p>Frontend : {information.Frontend}</p>
                 <p>Database : {information.Database}</p>
-                <button className="glow-button">Download Apk</button>
+                <a className="glow-button apk" href={ELearner} download="ELearner" target="_blank" rel="noreferrer">Download Apk</a>
             </div>
               <div className='RR'>
                 <img src={LandingImg} alt="Development"/>

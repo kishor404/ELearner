@@ -4,12 +4,14 @@ import Card2 from "../assets/landscape-2.png";
 import { useGlobal } from '../components/GlobalContext';
 import "../style/Practice.css";
 import { Link } from 'react-router-dom';
-import study from "../assets/study.jpg"
+import study from "../assets/study.jpg";
+import ReactLoading from "react-loading";
 
 
 
 
 function Practice() {
+   
    const { globalVariable } = useGlobal();
    let io=globalVariable;
    let ios=io.split("$");
@@ -78,6 +80,11 @@ function Practice() {
          <Link className='btx5' to={'/practice/formpractice'}>
             Practice On Google Form
          </Link>
+      </div>
+      <div className='loading'>
+         <ReactLoading type="bubbles" color="#0000FF"
+                height={100} width={100} />
+                <p>Loading Please Wait...</p>
       </div>
         
     </>

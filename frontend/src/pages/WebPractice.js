@@ -6,7 +6,8 @@ import { useGlobal } from '../components/GlobalContext';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import information from "../infomation.json";
-import study from "../assets/study.jpg"
+import study from "../assets/study.jpg";
+import ReactLoading from "react-loading";
 
 
 function WebPractice() {
@@ -25,13 +26,22 @@ function WebPractice() {
 
   // API Fetch
 
-  let ReqData=[{"Id":"404","Title":"No Data","Question":["No Data"],"Options":[["none"]],"Answer":["none"],"Author":"None","updatedAt":"404T565"},{"Id":"404","Title":"No Data","Question":["No Data"],"Options":[["none"]],"Answer":["none"],"Author":"None","updatedAt":"404T565"},{"Id":"404","Title":"No Data","Question":["No Data"],"Options":[["none"]],"Answer":["none"],"Author":"None","updatedAt":"404T565"}]
+  let ReqData=[{"Title":"No Data","Question":["No Data"],"Options":[["none"]],"Answer":["none"],"Author":"None","updatedAt":"404T565"},{"Id":"404","Title":"No Data","Question":["No Data"],"Options":[["none"]],"Answer":["none"],"Author":"None","updatedAt":"404T565"},{"Id":"404","Title":"No Data","Question":["No Data"],"Options":[["none"]],"Answer":["none"],"Author":"None","updatedAt":"404T565"}]
 
   const [WebData, setWebData] = useState(ReqData);
 
+  useEffect(()=>{
+    if(WebData[0].Title=="No Data"){
+      document.querySelector(".loading").style="display:flex;";
+    }
+    if(WebData[0].Title!="No Data"){
+      document.querySelector(".loading").style="display:none;";
+    }
+  },[WebData])
+
   useEffect(() => {
     const apiUrl = URL+'/api/web';
-  
+    
     fetch(apiUrl)
       .then(response => {
         if (!response.ok) {
@@ -46,6 +56,8 @@ function WebPractice() {
         console.error('Error fetching data:', error);
       });
   }, []);
+
+  
 
   // API Fetch
 
@@ -92,6 +104,8 @@ function WebPractice() {
   }
 
   const LatestData=WebData.slice(-3);
+
+  
 
   const container = document.querySelector(".testMod");
 
@@ -252,6 +266,13 @@ function WebPractice() {
          </button>
          <button className='btx6' onClick={opnMore}>More</button>
       </div>
+
+      <div className='loading'>
+         <ReactLoading type="bubbles" color="#0000FF"
+                height={100} width={100} />
+                <p>Loading Please Wait...</p>
+      </div>
+        
         
     </>
   )
